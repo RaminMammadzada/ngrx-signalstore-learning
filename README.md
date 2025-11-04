@@ -4,7 +4,29 @@ A comprehensive learning project for mastering NgRx SignalStore, Angular's light
 
 ## 📋 Overview
 
-This project provides hands-on examples and tutorials to help you learn NgRx SignalStore from basic concepts to advanced patterns. Each example builds upon the previous one, gradually introducing more complex state management scenarios.
+This project provides hands-on examples and tutorials to help you learn NgRx SignalStore from basic concepts to advanced patterns. Each example builds upon the previous one, gradually introducing more complex features and patterns.
+
+## 📸 Screenshots
+
+### 🔢 Basic Counter
+The Basic Counter example demonstrates fundamental NgRx SignalStore concepts including basic store setup, state management, and simple actions.
+
+![Basic Counter](./screenshots/counter.png)
+
+### 👥 Advanced Users
+The Advanced Users example showcases HTTP integration, async operations with rxMethod(), and complex state management patterns.
+
+![Advanced Users](./screenshots/users.png)
+
+### 🛍️ Custom Features
+The Custom Features example illustrates reusable store features, pagination, filtering, and advanced composition patterns.
+
+![Custom Features](./screenshots/products.png)
+
+### 📖 Learning Guide
+Comprehensive guide covering NgRx SignalStore concepts, best practices, and learning resources.
+
+![Learning Guide](./screenshots/guide.png)
 
 ## 🎯 Learning Objectives
 
@@ -107,7 +129,7 @@ patchState(store, (state) => ({
 loadData: rxMethod<void>(
   pipe(
     tap(() => patchState(store, { loading: true })),
-    switchMap(() => httpClient.get('/api/data')),
+    switchMap(() => httpClient.get('/api/data')), 
     tap((data) => patchState(store, { data, loading: false }))
   )
 )
